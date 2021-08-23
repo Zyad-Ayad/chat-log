@@ -19,7 +19,9 @@ owner.send("Hello **" + owner.username + "**, \n\nYou or someone else just added
 
 client.on("ready", () => {
 
-console.log("done - " + client.user.tag)
+	console.log("done - " + client.user.tag)
+	
+	client.user.setActivity(".setup | Watching your messages");
 
 })
 
