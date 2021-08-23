@@ -19,9 +19,8 @@ owner.send("Hello **" + owner.username + "**, \n\nYou or someone else just added
 
 client.on("ready", () => {
 
-	console.log("done - " + client.user.tag)
-	
-	client.user.setActivity(".setup | Watching your messages");
+console.log("done - " + client.user.tag)
+client.user.setActivity(".setup | Watching your messages");
 
 })
 
@@ -44,7 +43,14 @@ client.on("messageCreate", async message => {
     
     
     
+        if (!message.channel.permissionsFor(client.user).has("SEND_MESSAGES")) {
+            message.author.send({embeds: [delEmbed]})
+            message.author.send("this message is sent here because i don't have `SEND_MESSAGES` permission in " + message.channel.name)
+        }else {
+  
         message.channel.send({embeds: [delEmbed]})
+        
+        }        
         return;
 
     }
@@ -64,10 +70,53 @@ client.on("messageCreate", async message => {
     
     
     
+        if (!message.channel.permissionsFor(client.user).has("SEND_MESSAGES")) {
+            message.author.send({embeds: [delEmbed]})
+            message.author.send("this message is sent here because i don't have `SEND_MESSAGES` permission in " + message.channel.name)
+        }else {
+  
         message.channel.send({embeds: [delEmbed]})
+        
+        }
         return;
         
     }
+
+
+
+
+if (!message.guild.me.permissions.has("MANAGE_CHANNELS")) {
+
+
+    const delEmbed = new Discord.MessageEmbed()
+    .setColor('BLUE')
+    .setAuthor(message.author.username, message.author.avatarURL())
+    .setTitle(":x: ERROR")
+    .addField("ERROR TYPE:", `**chat-log** do not have \`MANAGE_CHANNELS\` permission!\nyou can make \`chat-log\` channel manually`)
+    .addField("\u200B", "\u200B")
+    .addField("Note : ", "if bot is not working/logging chat data.. please contact us [Formova support server](https://discord.gg/ArfZWMhcqD)")
+    .setFooter('chat-log', 'https://i.imgur.com/2GB0fgf.png')
+
+
+
+    if (!message.channel.permissionsFor(client.user).has("SEND_MESSAGES")) {
+        message.author.send({embeds: [delEmbed]})
+        message.author.send("this message is sent here because i don't have `SEND_MESSAGES` permission in " + message.channel.name)
+        return;
+    }else {
+
+    message.channel.send({embeds: [delEmbed]})
+    return;
+    
+    }
+
+
+
+}
+
+
+
+
 
 message.guild.channels.create("chat-log", {
         type: "text", //This create a text channel, you can make a voice one too, by changing "text" to "voice"
@@ -94,8 +143,14 @@ message.guild.channels.create("chat-log", {
   
   
   
+      if (!message.channel.permissionsFor(client.user).has("SEND_MESSAGES")) {
+          message.author.send({embeds: [delEmbed]})
+          message.author.send("this message is sent here because i don't have `SEND_MESSAGES` permission in " + message.channel.name)
+      }else {
+
       message.channel.send({embeds: [delEmbed]})
 
+      }
       })
 
       
@@ -108,6 +163,8 @@ client.on("messageDelete", async message => {
 
     let channel = await message.guild.channels.cache.find(channel => channel.name === "chat-log");
     if (!channel) return;
+    if (!channel.permissionsFor(client.user).has("SEND_MESSAGES")) return;
+    
 
 
     const now = new Date();
@@ -133,6 +190,7 @@ client.on("messageUpdate", async message => {
 
     let channel = await message.guild.channels.cache.find(channel => channel.name === "chat-log");
     if (!channel) return;
+    if (channel.permissionsFor(client.user).has("SEND_MESSAGES")) return;
 
 
     const now = new Date();
@@ -154,6 +212,7 @@ client.on("messageUpdate", async message => {
     channel.send({embeds: [delEmbed]})
 
 });
+
 
 
 
