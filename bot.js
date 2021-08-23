@@ -73,9 +73,30 @@ message.guild.channels.create("chat-log", {
            {
              id: message.guild.roles.everyone, //To make it be seen by a certain role, user an ID instead
              deny: ['SEND_MESSAGES'] //Deny permissions
-		   }
+		   },
+           {
+               id: "879273611603619881",
+               allow: ["SEND_MESSAGES"]
+           }
         ],
+      }).then(channell => {
+
+       const delEmbed = new Discord.MessageEmbed()
+      .setColor('BLUE')
+      .setAuthor(message.author.username, message.author.avatarURL())
+      .setTitle(":white_check_mark: Done")
+      .addField("channel info", `bot will start logging deleted messages, edited message in **chat-log** ==>  ${channell}`)
+      .addField("\u200B", "\u200B")
+      .addField("Note : ", "if bot is not working/logging chat data.. please contact us [Formova support server](https://discord.gg/ArfZWMhcqD)")
+      .setFooter('chat-log', 'https://i.imgur.com/2GB0fgf.png')
+  
+  
+  
+      message.channel.send({embeds: [delEmbed]})
+
       })
+
+      
 
 
 })
