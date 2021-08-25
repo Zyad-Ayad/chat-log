@@ -176,7 +176,8 @@ client.on("messageDelete", async message => {
     .setAuthor(message.author.username, message.author.avatarURL())
     .setTitle(":x: Message deleted")
     .addField("Message content", `-\n***${message.content}***\n-`)
-    .addField("Date :", date)
+    .addField("Date :", date, true)
+    .addField("Channel", `${message.channel}`, true)
     .setFooter('chat-log', 'https://i.imgur.com/2GB0fgf.png');
 
 
@@ -204,7 +205,8 @@ client.on("messageUpdate", async message => {
     .setTitle(":writing_hand: Message edited")
     .addField("Old message content", `**${message.content}**`)
     .addField("New message content", `**${message.reactions.message.content}**`)
-    .addField("Date :", date)
+    .addField("Date :", date, true)
+    .addField("Channel", `${message.channel}`, true)
     .setFooter('chat-log', 'https://i.imgur.com/2GB0fgf.png');
 
 
