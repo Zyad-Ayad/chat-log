@@ -47,7 +47,7 @@ await owner.send({ content: "Please contact us whenever you find a problem with 
 fetch("https://top.gg/api/bots/879273611603619881/stats", {
     method: "POST",
     headers: { "Content-Type": "application/json", 
-    "Authorization": process.env.topggg_token },
+    "Authorization": process.env.topgg_token },
     body: JSON.stringify({ "server_count": client.guilds.cache.size })
   })
  .then(res => res.json()) // expecting a json response
