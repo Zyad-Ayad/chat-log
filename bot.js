@@ -44,7 +44,7 @@ const row = new MessageActionRow()
 
 await owner.send({ content: "Please contact us whenever you find a problem with chat-log\nor whenever you want to make suggestion", embeds: [commands], components: [row] });
 
-fetch("https://top.gg/api/bots/606872086601793557/stats", {
+fetch("https://top.gg/api/bots/879273611603619881/stats", {
     method: "POST",
     headers: { "Content-Type": "application/json", 
     "Authorization": process.env.topggg_token },
