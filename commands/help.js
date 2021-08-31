@@ -36,7 +36,7 @@ for (const file of commandFiles) {
 		.setTitle("Formova commands | prefix is `.`")
 		.addField("Commands list", list)
 		.addField("NOTE :", "`[]` is required & `{}` is optinal")
-		.setFooter('Formova', 'https://g.top4top.io/p_14877vn8y1.jpg');
+		.setFooter('Formova', 'https://i.imgur.com/2GB0fgf.png');
 		
 		message.channel.send({ embeds: [commands] })
 	
