@@ -33,10 +33,10 @@ for (const file of commandFiles) {
 		const commands = new Discord.MessageEmbed()
 
 		.setColor('#0099ff')
-		.setTitle("Formova commands | prefix is `.`")
+		.setTitle("Chat-log commands | prefix is `.`")
 		.addField("Commands list", list)
 		.addField("NOTE :", "`[]` is required & `{}` is optinal")
-		.setFooter('Formova', 'https://i.imgur.com/2GB0fgf.png');
+		.setFooter('Chat-log', 'https://i.imgur.com/2GB0fgf.png');
 		
 		message.channel.send({ embeds: [commands] })
 	
