@@ -24,7 +24,7 @@ module.exports.run = async (client, message, args) => {
     .addField("New message content", `**${message.reactions.message.content}**`)
     .addField("Date :", date, true)
     .addField("Channel", `${message.channel}`, true)
-    .setFooter('chat-log', 'https://i.imgur.com/2GB0fgf.png');
+	.setFooter('chat-log', client.user.avatarURL());
 
 
 
