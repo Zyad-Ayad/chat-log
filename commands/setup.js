@@ -14,7 +14,7 @@ if (!message.member.permissions.has("ADMINISTRATOR") && !message.member.permissi
     .addField("ERROR TYPE:", `you don't have any of next permissions[\`ADMINISTRATOR\`, \`MANAGE_CHANNELS\`]\n\nyou can create \`chat-log\` channel manually. but please make sure that the name is correct`)
     .addField("\u200B", "\u200B")
     .addField("Note : ", "if bot is not working/logging chat data.. please contact us [Formova support server](https://discord.gg/ArfZWMhcqD)")
-    .setFooter('chat-log', 'https://i.imgur.com/2GB0fgf.png')
+	.setFooter('chat-log', client.user.avatarURL());
 
 
 
@@ -41,7 +41,7 @@ if (channel) {
     .addField("ERROR TYPE:", `**chat-log** is already exist ==> ${channel}`)
     .addField("\u200B", "\u200B")
     .addField("Note : ", "if bot is not working/logging chat data.. please contact us [Formova support server](https://discord.gg/ArfZWMhcqD)")
-    .setFooter('chat-log', 'https://i.imgur.com/2GB0fgf.png')
+	.setFooter('chat-log', client.user.avatarURL());
 
 
 
@@ -70,7 +70,7 @@ const delEmbed = new Discord.MessageEmbed()
 .addField("ERROR TYPE:", `**chat-log** do not have \`MANAGE_CHANNELS\` permission!\nyou can make \`chat-log\` channel manually`)
 .addField("\u200B", "\u200B")
 .addField("Note : ", "if bot is not working/logging chat data.. please contact us [Formova support server](https://discord.gg/ArfZWMhcqD)")
-.setFooter('chat-log', 'https://i.imgur.com/2GB0fgf.png')
+	.setFooter('chat-log', client.user.avatarURL());
 
 
 
@@ -114,7 +114,7 @@ message.guild.channels.create("chat-log", {
   .addField("channel info", `bot will start logging deleted messages, edited message in **chat-log** ==>  ${channell}`)
   .addField("\u200B", "\u200B")
   .addField("Note : ", "if bot is not working/logging chat data.. please contact us [Formova support server](https://discord.gg/ArfZWMhcqD)")
-  .setFooter('chat-log', 'https://i.imgur.com/2GB0fgf.png')
+	.setFooter('chat-log', client.user.avatarURL());
 
 
 
