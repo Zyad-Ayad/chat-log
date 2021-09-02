@@ -13,7 +13,7 @@ module.exports.run = async (client, message, args) => {
     .addField("Bot invite link", "[Invite](https://discord.com/oauth2/authorize?client_id=879273611603619881&permissions=75792&scope=bot)", true)
     .addField("Support server", "[Formova team](https://discord.com/invite/ArfZWMhcqD)", true)
     .addField("Vote", "[Vote](https://top.gg/bot/879273611603619881/vote)", true)
-    .setFooter('Chat-log', 'https://i.imgur.com/2GB0fgf.png');
+	.setFooter('chat-log', client.user.avatarURL());
     
 
 
