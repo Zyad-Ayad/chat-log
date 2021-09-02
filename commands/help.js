@@ -36,7 +36,7 @@ for (const file of commandFiles) {
 		.setTitle("Chat-log commands | prefix is `.`")
 		.addField("Commands list", list)
 		.addField("NOTE :", "`[]` is required & `{}` is optinal")
-		.setFooter('Chat-log', 'https://i.imgur.com/2GB0fgf.png');
+		.setFooter('chat-log', client.user.avatarURL());
 		
 		message.channel.send({ embeds: [commands] })
 	
