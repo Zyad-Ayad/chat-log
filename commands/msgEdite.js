@@ -2,11 +2,12 @@ const Discord = require("discord.js");
 const fetch = require("node-fetch");
 const fs = require("fs");
 
-module.exports.run = async (client, message, args) => {
+module.exports.run = async (client, oldMessage, newMessage) => {
 
 
 
-    let channel = await message.guild.channels.cache.find(channel => channel.name === "chat-log");
+
+    let channel = await oldMessage.guild.channels.cache.find(channel => channel.name === "chat-log");
     if (!channel) return;
     if (!channel.permissionsFor(client.user).has("SEND_MESSAGES")) return;
 
@@ -18,13 +19,13 @@ module.exports.run = async (client, message, args) => {
 
     const delEmbed = new Discord.MessageEmbed()
     .setColor('YELLOW')
-    .setAuthor(message.author.username, message.author.avatarURL())
+    .setAuthor(oldMessage.author.username, oldMessage.author.avatarURL())
     .setTitle(":writing_hand: Message edited")
-    .addField("Old message content", `**${message.content}**`)
-    .addField("New message content", `**${message.reactions.message.content}**`)
+    .addField("Old message content", `**${oldMessage.content}**`)
+    .addField("New message content", `**${newMessage.content}**`)
     .addField("Date :", date, true)
-    .addField("Channel", `${message.channel}`, true)
-	.setFooter('chat-log', client.user.avatarURL());
+    .addField("Channel", `${oldMessage.channel}`, true)
+    .setFooter('chat-log', client.user.avatarURL());
 
 
 
