@@ -16,7 +16,7 @@ module.exports.run = async (client, message, args) => {
 
     var msg = "This message has more than 1024 letters!";    
     
-    if (message.content.length < 1023) msg = `**${message.content}**`
+    if (message.content.length < 1000) msg = `**${message.content}**`
 
 
     const delEmbed = new Discord.MessageEmbed()
