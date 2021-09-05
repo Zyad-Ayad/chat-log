@@ -14,6 +14,10 @@ module.exports.run = async (client, message, args) => {
     const now = new Date();
     let date = now.toUTCString();
 
+    var msg = "This message has more than 1024 letters!";    
+    
+    if (message.content.length < 1023) msg = `**${message.content}**`
+
 
     const delEmbed = new Discord.MessageEmbed()
     .setColor('RED')
@@ -22,7 +26,8 @@ module.exports.run = async (client, message, args) => {
     .addField("Message content", `-\n***${message.content}***\n-`)
     .addField("Date :", date, true)
     .addField("Channel", `${message.channel}`, true)
-		.setFooter('chat-log', client.user.avatarURL());
+    .addField("Go to the message place?", `[Redirect](https://discord.com/channels/${message.guild.id}/${message.channel.id}/${message.id})`, true)
+    .setFooter('chat-log', client.user.avatarURL());
 
 
 
