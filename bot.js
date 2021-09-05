@@ -118,14 +118,12 @@ client.on("messageDelete", async message => {
 });
 
 
-client.on("messageUpdate", async message => {
+client.on("messageUpdate", async (oldMessage, newMessage) => {
 
-    let messageArray = message.content.split(" ");
-    let command = messageArray[0];
-    let args = messageArray.slice(1);
+
     let cmd = client.commands.get("messageUpdate");
     if (cmd) {    
-    cmd.run(client, message, args);    
+    cmd.run(client, oldMessage, newMessage);    
     }
 
 
