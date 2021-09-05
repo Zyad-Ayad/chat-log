@@ -20,8 +20,8 @@ var oldmsg = "This message has more than 1024 letters!";
 var newmsg = 'This message has more than 1024 letters!';
 
 
-if (oldMessage.content.length < 1023) oldmsg = `**${oldMessage.content}**`
-if (oldMessage.content.length < 1023) newmsg = `**${newMessage.content}**`
+if (oldMessage.content.length < 1000 ) oldmsg = `**${oldMessage.content}**`
+if (newMessage.content.length < 1000 ) newmsg = `**${newMessage.content}**`
 
 
     const delEmbed = new Discord.MessageEmbed()
