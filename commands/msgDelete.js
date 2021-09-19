@@ -23,7 +23,7 @@ module.exports.run = async (client, message, args) => {
     .setColor('RED')
     .setAuthor(message.author.username, message.author.avatarURL())
     .setTitle(":x: Message deleted")
-    .addField("Message content", `-\n***${message.content}***\n-`)
+    .addField("Message content", `-\n***${msg}***\n-`)
     .addField("Date :", date, true)
     .addField("Channel", `${message.channel}`, true)
     .addField("Go to the message place?", `[Redirect](https://discord.com/channels/${message.guild.id}/${message.channel.id}/${message.id})`, true)
