@@ -63,7 +63,7 @@ fetch("https://top.gg/api/bots/879273611603619881/stats", {
 client.on("ready", () => {
 
 console.log("done - " + client.user.tag)
-client.user.setActivity(".help | Dashboard comming soon!");
+client.user.setActivity(".help");
 
 })
 
