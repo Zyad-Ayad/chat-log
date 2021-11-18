@@ -16,12 +16,12 @@ module.exports.run = async (client, oldMessage, newMessage) => {
     let date = now.toUTCString();
 
 
-var oldmsg = "This message has more than 1024 letters!";
-var newmsg = 'This message has more than 1024 letters!';
+var oldmsg = "This message has more than 800 letters!";
+var newmsg = 'This message has more than 800 letters!';
 
 
-if (oldMessage.content.length < 1000 ) oldmsg = `**${oldMessage.content}**`
-if (newMessage.content.length < 1000 ) newmsg = `**${newMessage.content}**`
+if (oldMessage.content.length < 800 ) oldmsg = `**${oldMessage.content}**`
+if (newMessage.content.length < 800 ) newmsg = `**${newMessage.content}**`
 
 
     const delEmbed = new Discord.MessageEmbed()
