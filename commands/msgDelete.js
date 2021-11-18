@@ -14,9 +14,9 @@ module.exports.run = async (client, message, args) => {
     const now = new Date();
     let date = now.toUTCString();
 
-    var msg = "This message has more than 1024 letters!";    
+    var msg = "This message has more than 800 letters!";    
     
-    if (message.content.length < 1000) msg = `**${message.content}**`
+    if (message.content.length < 800) msg = `**${message.content}**`
 
 
     const delEmbed = new Discord.MessageEmbed()
